@@ -109,7 +109,7 @@ nz-header {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 .mobile-header {
-  height: 5rem;
+  height: 5.5rem;
   padding: 0;
   background: var(--default-white);
 }
