@@ -1,1 +1,272 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --default-white: #ffffff;
+  --black-color: #000000;
+  --default-theme: #006766;
+  --dashboard-asset: #0067661a;
+  --border-color: #cbd5e1;
+  --bg-default: #0067661a;
+  --default-secondary: #303740;
+  --font-light: #54606e;
+}
+
+@font-face {
+  font-family: ANM-FONT-Bold;
+  src: url(../src/assets/font/SFUI/SFUIText-Bold.ttf);
+}
+@font-face {
+  font-family: ANM-FONT-Medium;
+  src: url(../src/assets/font/SFUI/SFUIText-Medium.ttf);
+}
+@font-face {
+  font-family: ANM-FONT-Regular;
+  src: url(../src/assets/font/SFUI/SFUIText-Regular.ttf);
+}
+@font-face {
+  font-family: ANM-FONT-Semibold;
+  src: url(../src/assets/font/SFUI/SFUIText-Semibold.ttf);
+}
+@font-face {
+  font-family: ANM-FAIR-medium;
+  src: url(../src/assets/font/PlayfairDisplay/PlayfairDisplay-Medium.ttf);
+}
+@font-face {
+  font-family: ANM-FAIR-SemiBold;
+  src: url(../src/assets/font/PlayfairDisplay/PlayfairDisplay-SemiBold.ttf);
+}
+@font-face {
+  font-family: ANM-FONT-italic;
+  src: url(../src/assets/font/PlayfairDisplay/SFUIText-RegularItalic.ttf);
+}
+
+body {
+  background-color: var(--default-white);
+  font-family: "ANM-FONT-Medium";
+  color: var(--default-secondary);
+}
+.inner-content {
+  overflow: hidden;
+  overflow-y: auto;
+}
+.ant-layout-sider {
+  background-color: var(--default-white);
+}
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+  height: 100vh;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header-trigger {
+  height: 64px;
+  padding: 20px 24px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.44rem;
+}
+
+.sidebar-logo img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nz-header {
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.app-header {
+  /* position: relative; */
+  height: 4.375rem;
+  padding: 0;
+  background: var(--default-white);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.mobile-header {
+  height: 5rem;
+  padding: 0;
+  background: var(--default-white);
+}
+.inner-content {
+  background: var(--default-white);
+  height: 100%;
+}
+.ant-layout-header {
+  background-color: var(--default-white) !important;
+}
+.logo_text {
+  color: var(--default-theme);
+  font-weight: 600;
+  font-size: 22px;
+  font-family: "ANM-FONT-Semibold";
+}
+.logo_anm {
+  width: 8.375rem;
+}
+.ant-menu-title-content {
+  margin-left: 2rem;
+}
+li.ant-menu-item {
+  margin-bottom: 2.12rem !important;
+  font-weight: 600 !important;
+  font-family: "ANM-FONT-Semibold";
+  font-size: 16px !important;
+}
+.menu_li {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.marin-left {
+  margin-right: 8px;
+}
+.ant-layout-header {
+  padding: 0px !important;
+}
+.ant-menu-title-content {
+  display: flex !important;
+}
+.ant-layout-header {
+  line-height: normal !important;
+}
+.ant-layout {
+  background-color: var(--default-white);
+}
+.dashboard-container-right {
+  background-color: var(--dashboard-asset);
+}
+.theme-bg-color {
+  background-color: var(--default-theme);
+  background-image: url(./assets/img/dashboardImg.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.theme-font {
+  color: var(--default-white);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.theme-font-color {
+  color: var(--default-theme) !important;
+}
+.theme-h2 {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+.theme-h2-wel {
+  font-weight: 500;
+  font-size: 1.125rem;
+  font-family: "ANM-FAIR-medium";
+}
+.theme-h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.theme-h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "ANM-FAIR-SemiBold";
+}
+.profile-name {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "ANM-FAIR-SemiBold";
+}
+.designation {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 400;
+  font-family: "ANM-FONT-Regular";
+}
+.theme-h1 {
+  font-size: 1.625rem;
+  font-weight: 600;
+  font-family: "ANM-FAIR-SemiBold";
+}
+.theme-border {
+  border: 1px solid var(--border-color);
+}
+.dashboard-last-box {
+  background-color: var(--bg-default);
+  text-align: center;
+  padding: 1.88rem;
+}
+@media (max-width: 640px) {
+  .dashboard-last-box {
+    background-color: var(--bg-default);
+    text-align: center;
+    padding: 1.25rem 0.63rem;
+    width: 6.35rem;
+    height: 5.9375rem;
+  }
+}
+
+.main-container {
+  margin: 2.5rem 1.5rem;
+}
+.handburg-icon {
+  font-size: 2rem;
+}
+.h1-mobile {
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "ANM-FAIR-medium";
+}
+.h2-mobile {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.theme-font-mobile {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--default-white);
+  font-family: "ANM-FONT-Medium";
+}
+.theme-heading-mobile {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--default-white);
+  font-family: "ANM-FONT-Semibold";
+}
+.h3-mobile {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.h4-mobile {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.mobile-container {
+  margin: 1.5rem 1rem;
+}
+.lastpunch {
+  color: var(--font-light);
+  font-family: "ANM-FONT-italic";
+}
