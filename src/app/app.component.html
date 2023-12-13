@@ -1,10 +1,10 @@
 <nz-layout class="app-layout">
   <nz-sider
-    class="menu-sidebar hidden sm:block"
+    class="menu-sidebar hidden lg:block"
     nzCollapsible
     nzWidth="18rem"
     nzBreakpoint="md"
-    [(nzCollapsed)]="isCollapsed"
+    (nzCollapsed)="(false)"
     [nzTrigger]="null"
   >
     <div class="sidebar-logo">
@@ -12,26 +12,60 @@
         <img class="logo_anm" src="../assets/img/Group 9971.svg" alt="logo" />
       </a>
     </div>
-    <ul
-      nz-menu
-      nzTheme="light"
-      nzMode="inline"
-      [nzInlineCollapsed]="isCollapsed"
-    >
+    <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="false">
       <li nz-menu-item routerLinkActive="active" [routerLink]="['dashboard']">
-        <img class="marin-left" src="../assets/img/Home_light.svg" alt="home" />
+        <img
+          class="marin-left"
+          src="../assets/img/Home_light.svg"
+          alt="dashboard"
+        />
 
         Dashboard
       </li>
-      <li nz-menu-item routerLinkActive="active" [routerLink]="['welcome']">
-        <img class="marin-left" src="../assets/img/Home_light.svg" alt="home" />
+      <li nz-menu-item routerLinkActive="active" [routerLink]="['leaves']">
+        <img
+          class="marin-left"
+          src="../assets/img/Home_light.svg"
+          alt="leaves"
+        />
 
-        Welcome
+        Leaves
       </li>
     </ul>
   </nz-sider>
+  <div
+    class="mobile-sidebar"
+    [ngClass]="{ hidden: isSidebarHidden, visible: !isSidebarHidden }"
+  >
+    <ul
+      class="relative top-24"
+      nz-menu
+      nzTheme="light"
+      nzMode="inline"
+      [nzInlineCollapsed]="false"
+    >
+      <li nz-menu-item routerLinkActive="active" [routerLink]="['dashboard']">
+        <img
+          class="marin-left"
+          src="../assets/img/Home_light.svg"
+          alt="dashboard"
+        />
+
+        Dashboard
+      </li>
+      <li nz-menu-item routerLinkActive="active" [routerLink]="['leaves']">
+        <img
+          class="marin-left"
+          src="../assets/img/Home_light.svg"
+          alt="leaves"
+        />
+
+        Leaves
+      </li>
+    </ul>
+  </div>
   <nz-layout>
-    <nz-header class="hidden sm:block">
+    <nz-header class="hidden lg:block">
       <div class="app-header flex justify-between items-center">
         <input
           class="w-80 ms-6 h-10 bg-[#0067660F] rounded-md border-0 hover:border-0"
@@ -50,26 +84,28 @@
         </div>
       </div>
     </nz-header>
-    <nz-header class="sm:hidden block mobile-header">
+    <nz-header class="lg:hidden block mobile-header">
       <div class="flex justify-between items-center">
-        <div class="flex items-center p-4 gap-4">
+        <div class="flex items-center p-4 gap-4" (click)="toggleSidebar()">
           <img src="../assets/img/grid.svg" alt="" />
           <div>
             <p class="h1-mobile">Welcome!</p>
-            <h1 class="block sm:hidden theme-h4">Mayank Bundheliya</h1>
+            <h1 class="block lg:hidden theme-h4">Mayank Bundheliya</h1>
             <i class="lastpunch">Last punch at 09:55 AM</i>
           </div>
         </div>
         <img class="p-4 relative" src="../assets/img/bell.svg" alt="" />
       </div>
       <!-- <div class="ms-16">
-        <h1 class="block sm:hidden theme-h4">Mayank Bundheliya</h1>
+        <h1 class="block lg:hidden theme-h4">Mayank Bundheliya</h1>
         <i>Last punch at 09:55 AM</i>
       </div> -->
     </nz-header>
     <nz-content>
       <div class="inner-content">
-        <router-outlet></router-outlet>
+        <div class="lg:main-container mobile-container">
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </nz-content>
   </nz-layout>
